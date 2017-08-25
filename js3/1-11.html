@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-11</title>
+</head>
+<body>
+<script>
+var year=parseInt(prompt("请输入你的出生年份"));
+var mon=parseInt(prompt("请输入你的出生月份"));
+var day=parseInt(prompt("请输入你的出日期"));
+var sum=0;
+function tianshu() {
+    if (year%4==0){arguments[1]=29};
+    for(var i=0;i<mon-1;i++)
+    {
+        sum+=arguments[i]
+    }
+    sum+=day
+    return sum;
+}
+var ass=tianshu(31,28,31,30,31,30,31,31,30,31,30,31);
+document.write("您的生日是"+year+"年的第"+ass+"天");
+</script>
+</body>
+</html>
+function getDayTime(){
+
+
+
+var year = parseInt(prompt("請輸入您的出生年份"));
+
+var month  = parseInt(prompt("請輸入您的出生月份"));
+
+var day = parseInt(prompt("請輸入您的出生日期"));
+
+
+
+var arr = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+
+
+var totalDay = 0; //總日期
+
+
+
+if(isNaN(year)|| isNaN(month) || isNaN(day)){
+
+alert("請輸入有效數字");
+
+}else if(month > 12){
+
+alert("請輸入正確的月份");
+
+} else {
+
+if(year % 100 != 0 && year % 4 == 0 || year % 400 == 0 ){ //確認年份是否爲整百年，且能被4整除或400整除爲閏年
+
+arr[1] = 29;
+
+if(day > arr[month -1]) { //確認輸入天數不會超過該月天數
+
+alert("輸入日期不正確");
+
+return;
+
+}
+
+for(var i = 0 ; i < month - 1 ; i++){
+
+totalDay += arr[i];
+
+}
+
+}else {//非閏年
+
+if(day > arr[month -1]) { //確認輸入天數不會超過該月天數
+
+alert("輸入日期不正確");
+
+return;
+
+}
+
+for(var j = 0 ; j < month - 1 ; j++){
+
+totalDay += arr[j];
+
+}
+
+}
+
+totalDay += day;
+
+document.write("您的生日在"+year+"年是第"+ totalDay +"天");
+
+}
+
+}
+
+getDayTime();

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-10</title>
+</head>
+<body>
+<script>
+    function getAvg(){
+        var sum=0,len=arguments.length,i;
+        for(i=0;i<len;i++){
+            sum+=arguments[i];
+        }
+        return parseInt(sum/len)
+    }
+    var avg=getAvg(123,3532,7654,41523.32)
+    document.write(avg)
+</script>
+</body>
+</html>

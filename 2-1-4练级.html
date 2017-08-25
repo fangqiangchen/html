@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机号码验证</title>
+</head>
+<body>
+<script>
+    var telNum=prompt("请输入您的手机号码")
+    if(telNum.length!=11){
+        alert("请输入11位手机号码")
+    }else{
+        if(isNaN(telNum==true)){
+            alert("输入的手机号码必须是11位数字")
+        }else{
+            alert("号码设置正确")
+        }
+    }
+</script>
+</body>
+</html>
